@@ -1,8 +1,14 @@
 import './App.css';
+import Body from './components/Body';
+import appRouter from './components/Body';
+import { RouterProvider } from 'react-router-dom';
+
 
 function App() {
 return(
-  <p className='text-red-500'>Create NetflixGPT</p>
+  <>
+    <Body/>
+  </>
 )
 }
 
