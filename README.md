@@ -6,6 +6,7 @@
 # Features
 -Login/Signup page
     -sign in/sign up form
+    -Form validation
     -redirect to Browse Page
 -Browse (after Authentication)
     -Header
