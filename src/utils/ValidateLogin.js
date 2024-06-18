@@ -13,4 +13,5 @@ export const ValidateLogin = (email,password,name) => {
         if(!nameValid){
             return "Please Enter valid Name"
         }
+        return null;
 }
