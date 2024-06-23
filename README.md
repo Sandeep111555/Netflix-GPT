@@ -15,7 +15,9 @@
 -Implemented signout using signout api by firebase.
 -used UseNavigate to navigate between components
 -update profile with name and photoURL
-
+-Bugfix- signin display name and profile picture update
+-Bugfix- if the user is not logged in Redirect/ browse to logfin page and viceversa
+-Unsubscribed to the onAuthStateChange callback
 
 
 

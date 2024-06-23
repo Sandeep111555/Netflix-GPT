@@ -2,20 +2,19 @@ import React from 'react'
 import Header from './Header'
 import { useSelector } from 'react-redux'
 import { auth } from '../utils/firebase'
-import { useNavigate } from 'react-router-dom'
 import { signOut } from 'firebase/auth'
+import { useNavigate } from 'react-router-dom'
 
 const Browse = () => {
-  const user = useSelector(store => store.user);
   const navigate = useNavigate();
+  const user = useSelector(store => store.user);
 
   const handleSignout = () => {
     signOut(auth).then(() => {
       // Sign-out successful.
-      navigate('/');
+     navigate("/") 
     }).catch((error) => {
-      // An error happened.
-      navigate('/error');  //this is yet to be build.
+      // An error happened. //this is yet to be build.
     });
   }
   return (
