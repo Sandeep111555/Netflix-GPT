@@ -9,9 +9,5 @@ export const ValidateLogin = (email,password,name) => {
         if(!passwordvalid){
             return "Please Enter valid Password"
         }
-        const nameValid = /^[a-zA-Z]{3,16}$/.test(name);
-        if(!nameValid){
-            return "Please Enter valid Name"
-        }
         return null;
 }

@@ -2,6 +2,30 @@
 
 -Create React APP
 -Configured TailwindCss
+-Header
+-Routing of the app
+-Login Form
+-Sign up form
+-Form validation
+-Firebase setup
+-Deployed in firebase
+-Create SignUp user Account
+-Implement Sign In user API
+-Setup redux store for UserLogin for adding user and removing user in userSlice
+-Implemented signout using signout api by firebase.
+-used UseNavigate to navigate between components
+-update profile with name and photoURL
+
+
+
+
+
+
+
+
+
+
+
 
 # Features
 -Login/Signup page

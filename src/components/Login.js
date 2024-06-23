@@ -2,6 +2,11 @@ import Header from "./Header";
 import { useRef, useState } from "react";
 import { LOGIN_BODY_IMG } from "../utils/Constaints";
 import { ValidateLogin } from "../utils/ValidateLogin";
+import { createUserWithEmailAndPassword, signInWithEmailAndPassword,updateProfile } from "firebase/auth";
+import { auth } from "../utils/firebase";
+import { useNavigate } from "react-router-dom";
+import { useDispatch } from "react-redux";
+import { addUser } from "../utils/userSlice";
 
 const Login = () => {
 	const [isSignIn, setIsSignIn] = useState(true);
@@ -9,23 +14,67 @@ const Login = () => {
 	const email = useRef(null);
 	const password = useRef(null);
 	const [errMessage, setErrMessage] = useState(null);
+	const navigate = useNavigate();
+	const dispatch = useDispatch();
+
+
 
 	function handleSignIn() {
 		setIsSignIn(!isSignIn);
 	}
 
 	function handleValidation() {
-		console.log(
-			email.current.value,
-			password.current.value,
-			name.current.value
-		);
 		const errorMsg = ValidateLogin(
 			email.current.value,
 			password.current.value,
-			name.current.value
 		);
+
 		setErrMessage(errorMsg);
+
+		if (errorMsg) return;
+
+		if (!isSignIn)  //in case of signup
+		{
+			createUserWithEmailAndPassword(auth, email.current.value,
+				password.current.value)  //we have created user with email and password only so we need to add other details of the user like name and profile url. for that we can use update api given by firebase
+				.then((userCredential) => {
+					// Signed up
+					updateProfile(auth.currentUser, {
+						displayName: name.current.value, photoURL: "https://avatars.githubusercontent.com/u/100797005?v=4"
+					}).then(() => {
+						// Profile updated!
+						const { uid, email, displayName, photoURL } = auth.currentUser;
+						dispatch(addUser({ uid: uid, email: email, displayName: displayName, photoURL: photoURL }))
+
+					}).catch((error) => {
+						// An error occurred
+						// ...
+						setErrMessage(error.message);
+					});
+					navigate('/browse');
+
+				})
+				.catch((error) => {
+					const errorCode = error.code;
+					const errorMessage = error.message;
+					setErrMessage(errorCode + "-" + errorMessage);
+					// ..
+				});
+		}
+		else { //in case of signin
+			signInWithEmailAndPassword(auth, email.current.value, password.current.value)
+				.then((userCredential) => {
+					// Signed in 
+					const user = userCredential.user;
+					navigate('/browse');
+					// ...
+				})
+				.catch((error) => {
+					const errorCode = error.code;
+					const errorMessage = error.message;
+					setErrMessage(errorCode + "-" + errorMessage);
+				});
+		}
 	}
 	return (
 		<>
