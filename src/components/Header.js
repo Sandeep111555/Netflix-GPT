@@ -19,7 +19,6 @@ const Header = () => {
         // User is signed out
         // ...
         dispatch(removeUser()) //this will be called when there is logout event
-
         navigate('/');  
       }
     });
@@ -27,12 +26,10 @@ const Header = () => {
   }, []);
 
   return (
-    <Link to='/'>
-      <div className=' absolute p-2 mx-44 bg-gradient-to-b from-black z-10'>
-        <img className='w-44'
+    <div className='absolute w-screen p-2 bg-gradient-to-b from-black z-10'>
+        <img className='w-44 mx-44'
           src={LOGIN_LOGO} alt="logo" />
       </div>
-    </Link>
   )
 }
 
