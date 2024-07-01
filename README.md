@@ -22,6 +22,9 @@
 -add movies to the movie slice and also add trailer video to the now playing trailer
 -using iframe to play the video in background
 -using css to make browse page look good
+-built gpt slice and gpt component
+-added multi language support in gpt page
+
 
 
 

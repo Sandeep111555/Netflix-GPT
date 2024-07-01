@@ -8,8 +8,26 @@ export const API_OPTIONS = {
   method: 'GET',
   headers: {
     accept: 'application/json',
-    Authorization: 'Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiIwNjBiOWQ4ZmIxOWExMjAxOTEwYjQ4ZjNiNTIwYWQ4MCIsIm5iZiI6MTcxOTQyODM1Ni40MzEzMzgsInN1YiI6IjY2NzliNmRlZGJjOGIzOTlmZTkwNTIyYSIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.RHggYhk7Kt-ELDSZCJ_jKjQCKlQprTpYHDJMM8HwH8k'
+    Authorization: 'Bearer '+process.env.REACT_APP_TMDB_KEY
   }
 };
 
 export const IMG_CDN_URL = "https://image.tmdb.org/t/p/w500/"
+
+export const SUPPORTED_LANG = [
+  {
+    id:"en",
+    name: "English"
+  },
+  {
+    id:"hindi",
+    name: "Hindi"
+  },
+  {
+    id:"spanish",
+    name: "Spanish"
+  },
+]
+
+
+export const GROQ_CLOUD_API_KEY = process.env.REACT_APP_GROQ_KEY;

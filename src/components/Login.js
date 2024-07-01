@@ -48,7 +48,6 @@ const Login = () => {
 					}).catch((error) => {
 						// An error occurred
 						// ...
-						console.log("error while updating...")
 					});
 
 				})
@@ -75,7 +74,7 @@ const Login = () => {
 	return (
 		<>
 			<Header />
-			<div className="absolute">
+			<div className="absolute w-screen">
 				<img
 					src={LOGIN_BODY_IMG}
 					className="brightness-50"
