@@ -6,11 +6,19 @@ import { signOut } from 'firebase/auth'
 import useGetNowPlayingMovies from '../Hooks/useGetNowPlayingMovies'
 import PrimaryContainer from './PrimaryContainer'
 import SecondaryContainer from './SecondaryContainer'
+import useGetPopularMovies from '../Hooks/useGetPopulatMovies'
+import useGetTopRatedMovies from '../Hooks/useGetTopRatedMovies'
+import useGetTrendingMovies from '../Hooks/useGetTrendingMovies'
+import useGetUpComingMovies from '../Hooks/useGetUpcomingMovies'
 
 
 const Browse = () => {
   const user = useSelector(store => store.user);
   useGetNowPlayingMovies();
+  useGetPopularMovies();
+  useGetTopRatedMovies();
+  useGetTrendingMovies();
+  useGetUpComingMovies();
 
   const handleSignout = () => {
     signOut(auth).then(() => {
@@ -25,7 +33,7 @@ const Browse = () => {
       <div><Header /></div>
     <div className=' w-screen flex justify-end'>
       <div className='flex gap-2 m-5'>
-        <div className="w-10">
+        <div className="w-10 z-10">
           <img className="border rounded-lg" src={user?.photoURL} alt="profilePicture" />
         </div>
         <button onClick={handleSignout} className='font-bold text-red-600 z-10'>SignOut</button>

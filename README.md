@@ -18,7 +18,10 @@
 -Bugfix- signin display name and profile picture update
 -Bugfix- if the user is not logged in Redirect/ browse to logfin page and viceversa
 -Unsubscribed to the onAuthStateChange callback
-
+-TMDB api fetch
+-add movies to the movie slice and also add trailer video to the now playing trailer
+-using iframe to play the video in background
+-using css to make browse page look good
 
 
 
