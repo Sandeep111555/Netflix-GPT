@@ -37,41 +37,42 @@ const Browse = () => {
 		dispatch(toggleGptView());
 	};
 
-	const handleLang = (e)=>{
-		dispatch(changeLang(e.target.value))
-	}
+	const handleLang = (e) => {
+		dispatch(changeLang(e.target.value));
+	};
 	return (
-		<>
-			<div className="absolute">
-				<div>
-					<Header />
-				</div>
-				<div className=" w-screen flex justify-end">
-					<div className="flex gap-2 m-5 z-10">
-						{gptToggleView && <select className="bg-gray-500 rounded-lg text-white" onChange={handleLang}>
-							{SUPPORTED_LANG.map((lang)=><option key={lang.id} value={lang.id} >{lang.name}</option>)}
-						</select>}
-						
-						<button
-							className="bg-emerald-700 rounded-lg w-24 text-white hover:bg-emerald-950"
-							onClick={handleGPTView}
+		<div>
+			<Header />
+			<div className=" w-screen flex md:justify-end justify-center bg-black">
+				<div className="flex gap-2 m-5 z-10 mt-14 md:mt-5">
+					{gptToggleView && (
+						<select
+							className="bg-gray-500 p-2 rounded-lg text-white"
+							onChange={handleLang}
 						>
-							{gptToggleView? "Home Page":"GPT Search"}
-						</button>
-						<div className="w-10">
-							<img
-								className="border rounded-lg"
-								src={user?.photoURL}
-								alt="profilePicture"
-							/>
-						</div>
-						<button
-							onClick={handleSignout}
-							className="font-bold text-red-600"
-						>
-							SignOut
-						</button>
-					</div>
+							{SUPPORTED_LANG.map((lang) => (
+								<option
+									key={lang.id}
+									value={lang.id}
+								>
+									{lang.name}
+								</option>
+							))}
+						</select>
+					)}
+
+					<button
+						className="bg-emerald-700 rounded-lg w-24 text-white hover:bg-emerald-950"
+						onClick={handleGPTView}
+					>
+						{gptToggleView ? "Home Page" : "GPT Search"}
+					</button>
+					<button
+						onClick={handleSignout}
+						className=" bg-red-700 text-white rounded-md w-20 p-1 hover:bg-red-950"
+					>
+						SignOut
+					</button>
 				</div>
 			</div>
 			{gptToggleView ? (
@@ -82,7 +83,7 @@ const Browse = () => {
 					<SecondaryContainer />
 				</>
 			)}
-		</>
+		</div>
 	);
 };
 

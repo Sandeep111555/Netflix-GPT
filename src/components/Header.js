@@ -26,8 +26,8 @@ const Header = () => {
   }, []);
 
   return (
-    <div className='absolute w-screen p-2 bg-gradient-to-b from-black z-10'>
-        <img className='w-44 mx-44'
+    <div className='w-screen p-1 md:p-4 bg-gradient-to-b from-black absolute z-10 '>
+        <img className='w-44 md:mx-44 m-auto h-12'
           src={LOGIN_LOGO} alt="logo" />
       </div>
   )

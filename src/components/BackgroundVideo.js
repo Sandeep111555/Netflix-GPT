@@ -8,9 +8,9 @@ const BackgroundVideo = ({ videoId }) => {
   const highQualityParams = "vq=hd1080";
 
   return (
-    <div className="w-screen">
+    <div>
       <iframe
-        className="w-screen aspect-video"
+        className="w-screen aspect-video md:-mt-24 "
         src={`https://www.youtube.com/embed/${trailer?.key}?autoplay=1&mute=1&loop=1&playlist=${trailer?.key}&${highQualityParams}`}
         allowFullScreen
       ></iframe>

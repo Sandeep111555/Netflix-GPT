@@ -13,7 +13,7 @@ const SecondaryContainer = () => {
     //movie cards
     <div className='bg-black w-screen'>
 
-    <div className='-mt-44'>
+    <div className='md:-mt-44 -mt-32'>
       <MovieList title={"Now Playing Movies"} movies={nowPlayingMovies} />
       <MovieList title={"Popular Movies"} movies={popularMovies} />
       <MovieList title={"Top Rated Movies"} movies={topRatedMovies} />

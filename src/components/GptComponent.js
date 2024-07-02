@@ -42,10 +42,10 @@ const GptComponent = () => {
 	};
 	return (
         <>
-        	<div className=" fixed w-screen">
-				<img
+        	<div className="md:-mt-20 -mt-[35%]">
+				<img 
 					src={LOGIN_BODY_IMG}
-					className="brightness-50"
+					className="brightness-50 h-screen object-cover md:w-screen fixed"
 					alt="body_image"
 				/>
 			</div>
@@ -55,7 +55,7 @@ const GptComponent = () => {
 					<input
 						ref={searchText}
 						type="text"
-						className="w-96 h-14 rounded-lg bg-gray-500 text-white placeholder:text-white text-center"
+						className="md:w-96 md:h-14 w-64 h-14 rounded-lg bg-gray-500 text-white placeholder:text-white text-center"
 						placeholder={lang[langKey].gptSearchPlaceHolder}
 					/>
 					<button

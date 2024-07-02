@@ -24,6 +24,8 @@
 -using css to make browse page look good
 -built gpt slice and gpt component
 -added multi language support in gpt page
+-GroqCloud api for movie recommendation
+-tmdb movie search api for searching the groqcloud recommended movie
 
 
 

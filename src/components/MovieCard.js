@@ -5,8 +5,8 @@ const MovieCard = ({poster}) => {
   if(!poster)
     return null;
   return (
-    <div className='w-44'>
-        <img className="w-44 h-52" src={IMG_CDN_URL+poster} alt="movieCard" />
+    <div className='md:w-44 w-36'>
+        <img className="md:w-44 md:h-52 w-36 h-44" src={IMG_CDN_URL+poster} alt="movieCard" />
     </div>
   )
 }
